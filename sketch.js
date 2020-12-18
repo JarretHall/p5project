@@ -1,13 +1,30 @@
-//The setup function only happens once
+var phil = 0;
+
 function setup() {
-	createCanvas(500, 500); //create a 500px X 500px canvas
+  createCanvas(500, 500);
 }
 
-//The draw function happens over and over again
 function draw() {
-  background(173,216,230); //an RGB color for the canvas' background
-  //circle
-  stroke(255,255,127) // an RGB color for the circle's border
-  fill(255,255,127,150); // an RGB color for the inside of the circle (the last number refers to transparency (min. 0, max. 255))
-  ellipse(width/2,height/2,20,20); // center of canvas, 20px dia
+  background(phil, 100, 700);
+  fill("#add8e6"); //Background Color
+  stroke("#5EFF33"); //Stroke color
+  strokeWeight(5);
+  ellipse(mouseX, mouseY, 20, 20);
+  fill("#8333FF");
+  ellipse(phil, 200, phil, phil);
+
+  textSize(15);
+  textFont("Georgia");
+  textStyle(ITALIC);
+  textAlign(LEFT);
+  text("Wand Shooting Effect", 40, 40);
+}
+
+function mousePressed() {
+  if (phil > 400) {
+    phil = 20;
+  } else {
+    phil = phil + 15;
+  }
+
 }
